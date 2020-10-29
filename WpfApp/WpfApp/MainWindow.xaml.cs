@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Globalization;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -12,8 +12,6 @@ namespace WpfApp
     {
         private int _computerScore;
         private int _userScore;
-        
-        // TODO: Transparent button background + add a timer between each press so that you can't spam the buttons
 
         public MainWindow()
         {
@@ -158,6 +156,22 @@ namespace WpfApp
                 ResultTextBlock.Text = "You lost!";
                 _computerScore++;
                 ScoreTextBlock.Text = $"{_userScore} - {_computerScore}";
+            }
+
+            Wait(RockButton, PaperButton, ScissorsButton);
+
+            // Prevent the user from spamming
+            static async void Wait(UIElement firstButton, UIElement secondButton, UIElement thirdButton)
+            {
+                firstButton.IsEnabled = false;
+                secondButton.IsEnabled = false;
+                thirdButton.IsEnabled = false;
+
+                await Task.Delay(TimeSpan.FromSeconds(1));
+
+                firstButton.IsEnabled = true;
+                secondButton.IsEnabled = true;
+                thirdButton.IsEnabled = true;
             }
         }
     }

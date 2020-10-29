@@ -16,10 +16,10 @@
             <!-- Image UserChoice ColumnSpan = 4 -->
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-            <!-- TextBox Result ColumnSpan = 5 -->
+            <!-- TextBlock Result ColumnSpan = 5 -->
             <ColumnDefinition Width="*" />
             <!-- Button Paper ColumnSpan = 3 -->
-            <!-- TextBox Score ColumnSpan = 3 -->
+            <!-- TextBlock Score ColumnSpan = 3 -->
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <!-- Image ComputerChoice ColumnSpan = 4 -->
@@ -36,9 +36,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
             <RowDefinition Height="*" />
-            <!-- TextBox Score -->
+            <!-- TextBlock Score -->
             <RowDefinition Height="*" />
-            <!-- TextBox Result -->
+            <!-- TextBlock Result -->
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <!-- Image UserChoice ColumnSpan = 4 -->
@@ -61,24 +61,26 @@
 
         <!-- Grid Elements -->
         <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="10" Grid.RowSpan="3" x:Name="RockButton"
-                Click=" RockButton_OnClick">
+                Click=" RockButton_OnClick" Background="Transparent" BorderThickness="0">
             <Image x:Name="RockImage" Source="pack://application:,,,/img/rock.png" />
         </Button>
         <Button Grid.Column="6" Grid.ColumnSpan="3" Grid.Row="10" Grid.RowSpan="3" x:Name="PaperButton"
-                Click="PaperButton_OnClick">
+                Click="PaperButton_OnClick" Background="Transparent" BorderThickness="0">
             <Image x:Name="PaperImage" Source="pack://application:,,,/img/paper.png" />
         </Button>
         <Button Grid.Column="10" Grid.ColumnSpan="3" Grid.Row="10" Grid.RowSpan="3" x:Name="ScissorsButton"
-                Click="ScissorsButton_OnClick">
+                Click="ScissorsButton_OnClick" Background="Transparent" BorderThickness="0">
             <Image x:Name="ScissorsImage" Source="pack://application:,,,/img/scissors.png" />
         </Button>
 
         <Image Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="5" Grid.RowSpan="4" x:Name="UserChoice" Source="" />
         <Image Grid.Column="8" Grid.ColumnSpan="4" Grid.Row="5" Grid.RowSpan="4" x:Name="ComputerChoice" />
 
-        <TextBlock Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="3" x:Name="ResultTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="3" x:Name="ResultTextBlock"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-        <TextBlock Grid.Column="6" Grid.ColumnSpan="3" Grid.Row="2" x:Name="ScoreTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="6" Grid.ColumnSpan="3" Grid.Row="2" x:Name="ScoreTextBlock"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" />
 
 
     </Grid>
